@@ -1,0 +1,28 @@
+﻿@model List<lr8.Models.Product>
+
+<h2>Список</h2>
+<ul>
+    @foreach (var product in Model)
+    {
+        <li>@product.ProductID. @product.ProductName - @product.ProductPrice$ (@product.ProductCreatedDate.ToString("dd-MM-yyyy"))</li>
+    }
+</ul>
+
+<h2>Таблиця</h2>
+<table>
+    <tr>
+        <th style="padding-left: 7px;">Id</th>
+        <th style="padding-left: 7px;">Name</th>
+        <th style="padding-left: 7px;">Price</th>
+        <th style="padding-left: 7px;">Created Date</th>
+    </tr>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td style="padding: 7px;">@product.ProductID</td>
+            <td style="padding: 7px;">@product.ProductName</td>
+            <td style="padding: 7px;">@product.ProductPrice</td>
+            <td style="padding: 7px;">@product.ProductCreatedDate.ToString("dd-MM-yyyy")</td>
+        </tr>
+    }
+</table>
